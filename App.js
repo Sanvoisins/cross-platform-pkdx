@@ -13,11 +13,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
-      pokemons: []
     }
-  }
-  componentDidMount() {
-
   }
   render() {
     return (
@@ -26,7 +22,7 @@ export default class App extends React.Component {
           centerComponent={{ icon: 'album', color: '#fff' }}
           rightComponent={{ icon: 'account-box', color: '#fff' }}
           containerStyle={{
-              backgroundColor: 'grey',
+              backgroundColor: 'red',
           }}
         />
         <Stack.Navigator 
@@ -34,7 +30,7 @@ export default class App extends React.Component {
             headerShown: false
           }}
         >
-          <Stack.Screen name="Liste des items" component={ListComponent} />
+          <Stack.Screen name="Liste des items" component={ListComponent}/>
           <Stack.Screen name="detail" component={DetailComponent} />
         </Stack.Navigator>
       </NavigationContainer>
