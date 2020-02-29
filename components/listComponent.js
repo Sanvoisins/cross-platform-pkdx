@@ -49,7 +49,7 @@ export default function ListComponent ({ navigation }) {
                     key={pokemon.index}
                     style={styles.container}
                     onPress={() => {
-                        navigation.navigate('detail', {
+                        navigation.navigate('Detail', {
                             itemId: pokemon.index
                         });
                     }}
@@ -59,7 +59,7 @@ export default function ListComponent ({ navigation }) {
                         title={pokemon.name}
                         subtitle={
                             <View style={styles.subtitleView}>
-                            <Text style={styles.ratingText}>{pokemon.index}</Text>
+                            <Text style={styles.ratingText}>Numéro {pokemon.index}</Text>
                             </View>
                         }
                         leftAvatar={

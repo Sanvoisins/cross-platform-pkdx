@@ -2,8 +2,8 @@ import React, { Component, useState, useEffect} from 'react'
 import { View, Text, ScrollView, TouchableHighlight } from 'react-native';
 import { ListItem, Image, Icon, Card, Button } from 'react-native-elements';
 
-export default function DetailComponent ({ route, navigation }) {
-    const { itemId } = route.params;
+export default function DetailComponent ({ route }) {
+    const itemId = 1
     useEffect(() => {
         fetchPokemons();
     },[]);
