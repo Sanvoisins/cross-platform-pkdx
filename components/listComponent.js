@@ -14,14 +14,15 @@ export default function ListComponent ({ navigation }) {
             'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151'
         )
         const pokemons = await data.json();
-        console.log(pokemons)
-        console.log(pokemons.results)
+        // console.log(pokemons)
+        // console.log(pokemons.results)
         setPokedex(pokemons.results);
     }
     function getDetailPokemon(linkPokemon) {
         return fetch(linkPokemon)
             .then((response) => response.json())
             .then((responseJson) => {
+                // console.log(responseJson)
             return responseJson;
             })
             .catch((error) => {
@@ -49,8 +50,7 @@ export default function ListComponent ({ navigation }) {
                     style={styles.container}
                     onPress={() => {
                         navigation.navigate('detail', {
-                            itemId: pokemon.index,
-                            otherParam: pokemon,
+                            itemId: pokemon.index
                         });
                     }}
                 >
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
       color: 'grey'
     },
     container: {
-        backgroundColor: 'red'
+        backgroundColor: 'white'
     }
   })
 

@@ -3,17 +3,29 @@ import { View, Text } from 'react-native';
 import { Header } from 'react-native-elements';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
+import fire from './config/fire';
 import ListComponent from './components/listComponent';
 import DetailComponent from './components/detailComponent';
 
 const Stack = createStackNavigator();
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { 
+      user: {}
     }
+  }
+  componentDidMount() {
+    this.authListener();
+  }
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      if(user) {
+        this.setState({user})
+      } else {
+        this.setState({user: null})
+      }
+    })
   }
   render() {
     return (
